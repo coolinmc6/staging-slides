@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>Staging Branch</title>
     <meta charset="utf-8">
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -61,7 +61,7 @@ The Staging Environment is what QA sees.
 
 ---
 
-# Why Staging Breaks?
+# Why Staging Breaks Part 1
 
 .bullets[
 - We do not currently have a "main" protected branch.
@@ -75,6 +75,18 @@ out-of-sync with **Staging**.
 - In **BOTH SCENARIOS**, the PR makes its way into **Staging** and thus the staging environment. 
 By allowing merges directly into **Main**, we are opening ourselves up to conflicts...
   - ...conflicts that **SHOULD** just be resolved when the PR is opened 
+]
+
+---
+
+# Why Staging Breaks Part 2
+
+.bullets[
+- It would be wrong to not mention that **Staging** can also break because
+of changes in core.
+- While we don't have as much control here, the git branching strategy of
+core is creating issues:
+  - every time it fails, our staging environment can break as well
 ]
 
 ---
