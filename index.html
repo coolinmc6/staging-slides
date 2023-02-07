@@ -27,11 +27,14 @@
         padding: 0px;
       }
 
-      .git-branching {
+      .git-branching, .git-proposal {
         max-width: 100%;
         position: absolute;
         top: 25%;
         left: 0%
+      }
+      .git-proposal {
+        top: 10%;
       }
     </style>
   </head>
@@ -126,11 +129,32 @@ it's not working, we stop it.
 
 ---
 
+<img class="git-proposal" src="assets/current-way.png" />
+
+---
+
+<img class="git-proposal" src="assets/the-proposal.png" />
+
+---
+
+# The Proposal Full Process
+
+.bullets[
+- protect staging, prevent people from committing to this branch from local (only change in process)
+- create feature branch from main
+- open PR from feature branch into main
+- once approved, merge into main
+- monitor github action to merge into staging and deploy to staging env
+- flip ticket from CR to DR
+]
+
+---
+
 # One Git Branching Proposal 
 
 <img class="git-branching" src="assets/bf-git-branching.png" />
 
-
+--- 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
