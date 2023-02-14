@@ -130,11 +130,48 @@ it's not working, we stop it.
 
 ---
 
-# Ultimate Git Branching Proposal 
+# Common Questions
 
-<img class="git-branching" src="assets/bf-git-branching.png" />
+1. What if I/QA/Design want to see the code on staging?
+2. What if this feature won't be ready before the release?
+3. What if my code requires a future version of the app?
 
---- 
+---
+
+# 1 - What if I/QA/Design want to see the code on staging?
+
+.bullets[
+- Always ask: does this code *eventually* need to get in for the release?
+  - if yes, then just merge to **Main** and you'll be fine
+  - if *no*, can you make a few changes to hide it behind a feature flag?
+- Staging is an important branch, so if Design or QA want to *see something*, would a
+screen share really not work? We should only be merging code that will:
+  - (a) likely be in the release, OR
+  - (b) is hidden behind a feature flag (or hidden in some other way if not complete)
+]
+
+---
+
+# 2 - What if this feature won't be ready before the release?
+
+.bullets[
+- Hide behind a feature flag. That's it, that's the answer - if we allow ourselves to merge whatever
+we want to **Staging** without any regard for whether it will wind up in **Main** or not this
+release cycle, **Staging** will eventually become a mess and need to nuked
+]
+
+---
+
+# 3 - What if my code requires a future version of the app?
+
+.bullets[
+- Same as above - feature flag it. 
+- **Note:** For this particular scenario, however, we should discuss how else
+we could do this. 
+]
+
+---
+
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
